@@ -1,3 +1,8 @@
+
+html {
+  font-size: 16px; /* 16px es el tamaño predeterminado */
+}
+
 body {
   background-color: #55595c;
   margin: 0; /* resets the default 8px from most browsers */
@@ -6,7 +11,7 @@ body {
 
 #main-header {
   background-color: white;
-  color: #a70184;
+  color: black;
   padding: 5px 0; /* top&down left&right */
   margin: 20px 30px 20px 30px; /* top right down left */
 }
@@ -19,6 +24,200 @@ body {
   margin-right: 40px; /* same as native left separation for bullet point */
 }
 
-#games-section, #used-section, #brands-section, #access-buttons {
+#access-buttons {
   background-color: lightgray;
+}
+
+#games-section, #used-section, #brands-section {
+  background-color: lightgray;
+  padding: 20px;
+  margin: 20px;
+}
+
+.card img {
+  height: 180px;
+  width: 120px;
+}
+
+#access-buttons button {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+#main-header h1 span {
+  color: #a70184;;
+}
+
+#main-header > span {
+  /* busca los span que sea directamente decendientes del header */
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+#access-buttons > button:hover {
+  background-color: #a70184;
+}
+
+#access-buttons > button:active {
+  background-color: #55595c;
+  color: white;
+}
+
+#brands-section ul li:nth-child(odd) {
+  background-color: #a70184;
+  color: white;
+}
+
+#brands-section ul li:hover {
+  font-weight: bold;
+  background-color: chocolate;
+  /* list-style-type: none; */
+}
+
+#brands-section ul li::marker {
+  /* color: chocolate;
+  font-size: 20px; */
+  content: "👾 ";
+}
+
+#brands-section ul li {
+  font-size: 16px;
+}
+
+#brands-section ul li::first-letter {
+  font-size: 1.1em;
+}
+
+/* agregar contenido cuando el usuario pasa el cursor sobre el elemento */
+
+#brands-section ul li:hover::after {
+  content: " - ON SALE";
+}
+
+#access-buttons {
+  height: 120px;
+  display: flex;
+  justify-content: space-evenly; /* horizontal */
+  align-items: center; /* vertical */
+}
+
+
+.card {
+  background-color: #55595c;
+  width: 200px;
+  height: 380px;
+  border-radius: 10px;
+  color: white;
+} 
+
+.games-container {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+  gap: 20px
+}
+
+.card {
+  display: flex;
+  flex-direction: column; /* los ejes cambian */
+  align-items: center; /* horizontal. ver flex-direction */
+  justify-content: space-evenly; /* vertical. ver flex-direction */
+  
+  /* transiciones */
+  transition-duration: 0.2s; /* cualquier animacion o cambio que ocurra en el elemento, no será de golpe, sino que tardará este tiempo */
+}
+
+.card:hover {
+  flex-grow: 1;
+  background-color: #262829;
+}
+
+#access-buttons {
+  position: sticky;
+  top: 0
+}
+
+#main-header {
+  position: relative; /* agregamos el relative para poder ubicar elementos internos de forma absoluta. (el emoji de confeti)*/
+}
+
+#main-header p {
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+
+#main-header {
+  margin: 20px 10%
+}
+
+
+p {
+  font-size: 0.7rem; /* 70% de el tamaño de fuentes del html. ver primera linea */
+}
+
+h1 {
+  font-size: 1.8rem; /* 180% de el tamaño de fuentes del html. ver primera linea */
+}
+
+h2 {
+  font-size: 1.5rem; /* 150% de el tamaño de fuentes del html. ver primera linea */
+}
+
+h3 {
+  font-size: 1.3rem; /* 130% de el tamaño de fuentes del html. ver primera linea */
+}
+/* ...hariamos lo mismo con todas las etiquetas de texto */
+
+
+/* Consideramos todos los estilos anteriores que aplican a mobiles y son generales para todos los dispositivos */
+
+/* TABLET: 470px y 800px */
+@media (width >= 470px) and (width < 800px) {
+
+  body {
+    background-color: #a70184;
+  }
+
+  .games-container {
+    gap: 80px
+  }
+
+  #access-buttons button {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+  }
+
+  html {
+    font-size: 20px;
+  }
+
+}
+
+/* DESKTOP: 800px y 1440px */
+@media (width >= 800px) and (width < 1440px) {
+
+  body {
+    background-color: #262829;
+  }
+
+  #access-buttons button {
+    width: 100px;
+    height: 70px;
+    border-radius: 15px;
+  }
+
+  #games-section-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  html {
+    font-size: 12px;
+  }
+
 }
